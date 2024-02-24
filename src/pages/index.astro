@@ -1,0 +1,91 @@
+---
+import '@/styles/globals.css';
+import Layout from '@/layouts/Layout.astro';
+import { Button } from '@/components/ui/button';
+import { ButtonIcon } from '@/components/ui/buttonIcon';
+import { ButtonLink } from '@/components/ui/buttonLink';
+import { ButtonLinkIcon } from '@/components/ui/buttonLinkIcon';
+import { PenLine, Paperclip, ExternalLink, PlusCircle, Trash2, SendHorizonal, ChevronRight } from 'lucide-react';
+---
+
+<Layout title="MIeL UI">
+  <main class="container p-4">
+    <div class="flex flex-col gap-3">
+			<h1 class="text-xl">Primary</h1>
+      <div class="flex flex-wrap gap-2">
+        <Button>Enviar</Button>
+        <Button disabled>Enviar</Button>
+        <Button Icon={SendHorizonal}>Enviar</Button>
+				<ButtonIcon Icon={SendHorizonal} />
+        <Button loading>Enviar</Button>
+				<ButtonIcon Icon={SendHorizonal} loading />
+      </div>
+			<h1 class="text-xl">Secondary</h1>
+      <div class="flex flex-wrap gap-2">
+        <Button variant="secondary">Adjuntar</Button>
+        <Button variant="secondary" disabled>Adjuntar</Button>
+        <Button variant="secondary" Icon={Paperclip}>Adjuntar</Button>
+				<ButtonIcon variant="secondary" Icon={Paperclip} />
+        <Button variant="secondary" loading>Adjuntar</Button>
+				<ButtonIcon variant="secondary" Icon={Paperclip} loading />
+      </div>
+			<h1 class="text-xl">Dashed</h1>
+      <div class="flex flex-wrap gap-2">
+        <Button variant="dashed">Agregar</Button>
+        <Button variant="dashed" disabled>Agregar</Button>
+        <Button variant="dashed" Icon={PlusCircle}>Agregar</Button>
+				<ButtonIcon variant="dashed" Icon={PlusCircle} />
+        <Button variant="dashed" loading>Agregar</Button>
+				<ButtonIcon variant="dashed" Icon={PlusCircle} loading />
+      </div>
+			<h1 class="text-xl">Destructive</h1>
+      <div class="flex flex-wrap gap-2">
+        <Button variant="destructive">Eliminar</Button>
+        <Button variant="destructive" disabled>Eliminar</Button>
+        <Button variant="destructive" Icon={Trash2}>Eliminar</Button>
+				<ButtonIcon variant="destructive" Icon={Trash2} />
+        <Button variant="destructive" loading>Eliminar</Button>
+				<ButtonIcon variant="destructive" Icon={Trash2} loading />
+      </div>
+			<h1 class="text-xl">Ghost</h1>
+      <div class="flex flex-wrap gap-2">
+        <Button variant="ghost">Editar</Button>
+        <Button variant="ghost" disabled>Editar</Button>
+        <Button variant="ghost" Icon={PenLine}>Editar</Button>
+				<ButtonIcon variant="ghost" Icon={PenLine} />
+        <Button variant="ghost" loading>Editar</Button>
+				<ButtonIcon variant="ghost" Icon={PenLine} loading />
+      </div>
+			<h1 class="text-xl">Link</h1>
+      <div class="flex flex-wrap gap-2">
+        <Button variant="link">Abrir</Button>
+        <Button variant="link" disabled>Abrir</Button>
+        <Button variant="link" Icon={ExternalLink}>Abrir</Button>
+				<ButtonIcon variant="link" Icon={ExternalLink} />
+        <Button variant="link" loading>Abrir</Button>
+				<ButtonIcon variant="link" Icon={ExternalLink} loading />
+      </div>
+			<h1 class="text-xl">Sizing</h1>
+      <div class="flex flex-wrap gap-2">
+        <Button size="sm">Enviar</Button>
+				<ButtonIcon size="sm" Icon={SendHorizonal} />
+        <Button>Enviar</Button>
+				<ButtonIcon Icon={SendHorizonal} />
+        <Button size="lg">Enviar</Button>
+				<ButtonIcon size="lg" Icon={SendHorizonal} />
+      </div>
+			<h1 class="text-xl">Block & mobile</h1>
+      <div class="flex flex-wrap gap-2">
+        <Button Icon={SendHorizonal} block>Enviar</Button>
+        <Button Icon={SendHorizonal} mobile>Enviar</Button>
+      </div>
+			<h1 class="text-xl">Link</h1>
+      <div class="flex flex-wrap gap-2">
+        <ButtonLink Icon={ChevronRight} href="#">Ir al calendario</ButtonLink>
+        <ButtonLinkIcon Icon={ChevronRight} href="#" />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style></style>
