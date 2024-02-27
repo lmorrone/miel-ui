@@ -1,27 +1,36 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
+
+import Menu from '@/components/shared/Menu.astro';
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="dark:bg-gray-950">
+    <main>
+      <div class="fixed inset-0 left-0 z-10 hidden w-[20rem] overflow-y-auto p-8 lg:block">
+        <Menu />
+      </div>
+      <div class="container py-8 lg:pl-[20rem]">
+        <slot />
+      </div>
+    </main>
+  </body>
 </html>
 <style is:global>
-	html {
-		@apply text-sm
-	}
+  html {
+    @apply text-sm;
+  }
 </style>

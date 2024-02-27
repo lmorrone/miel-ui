@@ -1,91 +1,121 @@
 ---
 import '@/styles/globals.css';
 import Layout from '@/layouts/Layout.astro';
+import Section from '@/components/shared/Section.astro';
 import { Button } from '@/components/ui/button';
 import { ButtonIcon } from '@/components/ui/buttonIcon';
 import { ButtonLink } from '@/components/ui/buttonLink';
 import { ButtonLinkIcon } from '@/components/ui/buttonLinkIcon';
-import { PenLine, Paperclip, ExternalLink, PlusCircle, Trash2, SendHorizonal, ChevronRight } from 'lucide-react';
+import {
+  PenLine,
+  Paperclip,
+  ExternalLink,
+  PlusCircle,
+  Trash2,
+  SendHorizonal,
+  ChevronRight,
+} from 'lucide-react';
 ---
 
 <Layout title="MIeL UI">
-  <main class="container p-4">
-    <div class="flex flex-col gap-3">
-			<h1 class="text-xl">Primary</h1>
+  <h1 class="mb-4 text-4xl font-semibold">Buttons</h1>
+  <p class="mb-4">Descripción general del componente</p>
+  <div class="mt-8 grid grid-cols-1 gap-6">
+    <Section title="Variants">
+      <p class="mb-4 mt-8">
+        <span class="font-semibold">Primary:</span> Usar primary para las acciones principales de una
+        página
+      </p>
       <div class="flex flex-wrap gap-2">
         <Button>Enviar</Button>
         <Button disabled>Enviar</Button>
         <Button Icon={SendHorizonal}>Enviar</Button>
-				<ButtonIcon Icon={SendHorizonal} />
+        <ButtonIcon Icon={SendHorizonal} />
         <Button loading>Enviando</Button>
-				<ButtonIcon Icon={SendHorizonal} loading />
+        <ButtonIcon Icon={SendHorizonal} loading />
       </div>
-			<h1 class="text-xl">Secondary</h1>
+      <p class="mb-4 mt-8">
+        <span class="font-semibold">Secondary:</span> Usar primary para las acciones principales de una
+        página
+      </p>
       <div class="flex flex-wrap gap-2">
         <Button variant="secondary">Adjuntar</Button>
         <Button variant="secondary" disabled>Adjuntar</Button>
         <Button variant="secondary" Icon={Paperclip}>Adjuntar</Button>
-				<ButtonIcon variant="secondary" Icon={Paperclip} />
+        <ButtonIcon variant="secondary" Icon={Paperclip} />
         <Button variant="secondary" loading>Subiendo</Button>
-				<ButtonIcon variant="secondary" Icon={Paperclip} loading />
+        <ButtonIcon variant="secondary" Icon={Paperclip} loading />
       </div>
-			<h1 class="text-xl">Dashed</h1>
+      <p class="mb-4 mt-8">
+        <span class="font-semibold">Dashed:</span> Usar primary para las acciones principales de una
+        página
+      </p>
       <div class="flex flex-wrap gap-2">
         <Button variant="dashed">Agregar</Button>
         <Button variant="dashed" disabled>Agregar</Button>
         <Button variant="dashed" Icon={PlusCircle}>Agregar</Button>
-				<ButtonIcon variant="dashed" Icon={PlusCircle} />
+        <ButtonIcon variant="dashed" Icon={PlusCircle} />
         <Button variant="dashed" loading>Agregando</Button>
-				<ButtonIcon variant="dashed" Icon={PlusCircle} loading />
+        <ButtonIcon variant="dashed" Icon={PlusCircle} loading />
       </div>
-			<h1 class="text-xl">Destructive</h1>
+      <p class="mb-4 mt-8">
+        <span class="font-semibold">Destructive:</span> Usar primary para las acciones principales de
+        una página
+      </p>
       <div class="flex flex-wrap gap-2">
         <Button variant="destructive">Eliminar</Button>
         <Button variant="destructive" disabled>Eliminar</Button>
         <Button variant="destructive" Icon={Trash2}>Eliminar</Button>
-				<ButtonIcon variant="destructive" Icon={Trash2} />
+        <ButtonIcon variant="destructive" Icon={Trash2} />
         <Button variant="destructive" loading>Eliminando</Button>
-				<ButtonIcon variant="destructive" Icon={Trash2} loading />
+        <ButtonIcon variant="destructive" Icon={Trash2} loading />
       </div>
-			<h1 class="text-xl">Ghost</h1>
+      <p class="mb-4 mt-8">
+        <span class="font-semibold">Ghost:</span> Usar primary para las acciones principales de una página
+      </p>
       <div class="flex flex-wrap gap-2">
         <Button variant="ghost">Editar</Button>
         <Button variant="ghost" disabled>Editar</Button>
         <Button variant="ghost" Icon={PenLine}>Editar</Button>
-				<ButtonIcon variant="ghost" Icon={PenLine} />
+        <ButtonIcon variant="ghost" Icon={PenLine} />
         <Button variant="ghost" loading>Guardando</Button>
-				<ButtonIcon variant="ghost" Icon={PenLine} loading />
+        <ButtonIcon variant="ghost" Icon={PenLine} loading />
       </div>
-			<h1 class="text-xl">Link</h1>
+      <p class="mb-4 mt-8">
+        <span class="font-semibold">Link:</span> Usar primary para las acciones principales de una página
+      </p>
       <div class="flex flex-wrap gap-2">
         <Button variant="link">Abrir</Button>
         <Button variant="link" disabled>Abrir</Button>
         <Button variant="link" Icon={ExternalLink}>Abrir</Button>
-				<ButtonIcon variant="link" Icon={ExternalLink} />
+        <ButtonIcon variant="link" Icon={ExternalLink} />
         <Button variant="link" loading>Abriendo</Button>
-				<ButtonIcon variant="link" Icon={ExternalLink} loading />
+        <ButtonIcon variant="link" Icon={ExternalLink} loading />
       </div>
-			<h1 class="text-xl">Sizing</h1>
+    </Section>
+    <Section title="Sizing">
       <div class="flex flex-wrap gap-2">
         <Button size="sm">Enviar</Button>
-				<ButtonIcon size="sm" Icon={SendHorizonal} />
+        <ButtonIcon size="sm" Icon={SendHorizonal} />
         <Button>Enviar</Button>
-				<ButtonIcon Icon={SendHorizonal} />
+        <ButtonIcon Icon={SendHorizonal} />
         <Button size="lg">Enviar</Button>
-				<ButtonIcon size="lg" Icon={SendHorizonal} />
+        <ButtonIcon size="lg" Icon={SendHorizonal} />
       </div>
-			<h1 class="text-xl">Block & mobile</h1>
+    </Section>
+    <Section title="Block and mobile">
       <div class="flex flex-wrap gap-2">
         <Button Icon={SendHorizonal} block>Enviar</Button>
         <Button Icon={SendHorizonal} mobile>Enviar</Button>
       </div>
-			<h1 class="text-xl">Link</h1>
+    </Section>
+    <Section title="Button link (anchor)">
       <div class="flex flex-wrap gap-2">
-        <ButtonLink Icon={ChevronRight} href="#">Ir al calendario</ButtonLink>
+        <ButtonLink Icon={ChevronRight} href="#" target="_blank">Ir al calendario</ButtonLink>
         <ButtonLinkIcon Icon={ChevronRight} href="#" />
       </div>
-    </div>
-  </main>
+    </Section>
+  </div>
 </Layout>
 
 <style></style>
