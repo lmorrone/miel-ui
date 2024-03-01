@@ -10,26 +10,26 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          'bg-primary text-primary-foreground hover:bg-primary-700 focus:ring-primary/30 shadow',
+        primary:
+          'bg-primary text-primary-foreground shadow hover:bg-primary-700 focus:ring-primary/30',
         destructive:
-          'bg-destructive text-destructive-foreground hover:bg-destructive-700 focus:ring-destructive-200 shadow',
+          'bg-destructive text-destructive-foreground shadow hover:bg-destructive-700 focus:ring-destructive/30',
         secondary:
-          'border border-secondary-300 hover:bg-secondary-100 hover focus:ring-secondary/70 shadow-sm',
+          'border border-secondary shadow-sm hover:bg-secondary-100 focus:ring-secondary/70 dark:hover:bg-secondary-900',
         dashed:
-          'border border-secondary-300 border-dashed hover:bg-primary-50 hover:border-primary focus:ring-primary/30 shadow-sm',
-        ghost: 'hover:bg-secondary-100 focus:ring-secondary/70',
+          'border border-secondary border-dashed shadow-sm hover:bg-primary-50 hover:border-primary focus:ring-primary/30 dark:hover:bg-primary-950',
+        ghost: 'hover:bg-secondary-100 focus:ring-secondary/70 dark:hover:bg-secondary-900',
         link: 'text-primary underline-offset-4 hover:underline focus:ring-primary/30 focus:ring-0',
       },
       size: {
-        default: 'h-9 w-9',
+        md: 'h-9 w-9',
         sm: 'h-7 w-7 rounded-md',
         lg: 'h-11 w-11 rounded-md text-lg',
       },
     },
     defaultVariants: {
-      variant: 'default',
-      size: 'default',
+      variant: 'primary',
+      size: 'md',
     },
   },
 );

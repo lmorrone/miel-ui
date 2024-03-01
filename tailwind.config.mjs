@@ -17,8 +17,8 @@ module.exports = {
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
-        background: colors.white,
-        foreground: colors.gray[950],
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         primary: {
           50: '#ebfef7',
           100: '#d0fbe9',
@@ -36,8 +36,8 @@ module.exports = {
         },
         secondary: {
           ...colors.gray,
-          DEFAULT: colors.gray[200],
-          foreground: colors.gray[950],
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         destructive: {
           ...colors.red,

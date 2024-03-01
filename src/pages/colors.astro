@@ -1,0 +1,69 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Section from '@/layouts/components/Section.astro';
+import Content from '@/layouts/components/Content.astro';
+import Color from '@/components/examples/colors/colorExample';
+---
+
+<Layout title="Colors">
+  <Content title="Colors">
+    <Fragment slot="description">Descripción general del componente</Fragment>
+    <Section title="Primary color">
+      <Fragment slot="description">
+        Usar primary para las acciones principales de una página
+      </Fragment>
+      <div class="grid grid-cols-12 gap-2">
+        <Color hex="#Ef7D12" number="default" className="bg-primary text-white" />
+        <Color hex="#Ef7D12" number="50" className="bg-primary-50  text-black" />
+        <Color hex="#Ef7D12" number="100" className="bg-primary-100 text-black" />
+        <Color hex="#Ef7D12" number="200" className="bg-primary-200 text-black" />
+        <Color hex="#Ef7D12" number="300" className="bg-primary-300 text-black" />
+        <Color hex="#Ef7D12" number="400" className="bg-primary-400 text-black" />
+        <Color hex="#Ef7D12" number="500" className="bg-primary-500 text-white" />
+        <Color hex="#Ef7D12" number="600" className="bg-primary-600 text-white" />
+        <Color hex="#Ef7D12" number="700" className="bg-primary-700 text-white" />
+        <Color hex="#Ef7D12" number="800" className="bg-primary-800 text-white" />
+        <Color hex="#Ef7D12" number="900" className="bg-primary-900 text-white" />
+        <Color hex="#Ef7D12" number="950" className="bg-primary-950 text-white" />
+      </div>
+    </Section>
+    <Section title="Secondary color">
+      <Fragment slot="description">
+        Usar primary para las acciones principales de una página
+      </Fragment>
+      <div class="grid grid-cols-12 gap-2">
+        <Color hex="#Ef7D12" number="default" className="bg-secondary text-secondary-foreground" />
+        <Color hex="#Ef7D12" number="50" className="bg-secondary-50  text-black" />
+        <Color hex="#Ef7D12" number="100" className="bg-secondary-100 text-black" />
+        <Color hex="#Ef7D12" number="200" className="bg-secondary-200 text-black" />
+        <Color hex="#Ef7D12" number="300" className="bg-secondary-300 text-black" />
+        <Color hex="#Ef7D12" number="400" className="bg-secondary-400 text-black" />
+        <Color hex="#Ef7D12" number="500" className="bg-secondary-500 text-white" />
+        <Color hex="#Ef7D12" number="600" className="bg-secondary-600 text-white" />
+        <Color hex="#Ef7D12" number="700" className="bg-secondary-700 text-white" />
+        <Color hex="#Ef7D12" number="800" className="bg-secondary-800 text-white" />
+        <Color hex="#Ef7D12" number="900" className="bg-secondary-900 text-white" />
+        <Color hex="#Ef7D12" number="950" className="bg-secondary-950 text-white" />
+      </div>
+    </Section>
+    <Section title="Destructive color">
+      <Fragment slot="description">
+        Usar primary para las acciones principales de una página
+      </Fragment>
+      <div class="grid grid-cols-12 gap-2">
+        <Color hex="#Ef7D12" number="default" className="bg-destructive text-white" />
+        <Color hex="#Ef7D12" number="50" className="bg-destructive-50  text-black" />
+        <Color hex="#Ef7D12" number="100" className="bg-destructive-100 text-black" />
+        <Color hex="#Ef7D12" number="200" className="bg-destructive-200 text-black" />
+        <Color hex="#Ef7D12" number="300" className="bg-destructive-300 text-black" />
+        <Color hex="#Ef7D12" number="400" className="bg-destructive-400 text-black" />
+        <Color hex="#Ef7D12" number="500" className="bg-destructive-500 text-white" />
+        <Color hex="#Ef7D12" number="600" className="bg-destructive-600 text-white" />
+        <Color hex="#Ef7D12" number="700" className="bg-destructive-700 text-white" />
+        <Color hex="#Ef7D12" number="800" className="bg-destructive-800 text-white" />
+        <Color hex="#Ef7D12" number="900" className="bg-destructive-900 text-white" />
+        <Color hex="#Ef7D12" number="950" className="bg-destructive-950 text-white" />
+      </div>
+    </Section>
+  </Content>
+</Layout>

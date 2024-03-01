@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<main>
+  <header class="mb-6">
+    <h1 class="text-4xl font-semibold">{title}</h1>
+    {
+      Astro.slots.has('description') && (
+        <div class="mt-6 text-muted-foreground">
+          <slot name="description" />
+        </div>
+      )
+    }
+  </header>
+  <hr class="mb-8 border-secondary" />
+  <slot />
+</main>
