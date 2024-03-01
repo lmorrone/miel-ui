@@ -10,7 +10,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
+        primary:
           'bg-primary text-primary-foreground hover:bg-primary-700 focus:ring-primary/30 shadow',
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive-700 focus:ring-destructive-200 shadow',
@@ -22,14 +22,14 @@ const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline focus:ring-primary/30 focus:ring-0',
       },
       size: {
-        default: 'h-9 w-9',
+        md: 'h-9 w-9',
         sm: 'h-7 w-7 rounded-md',
         lg: 'h-11 w-11 rounded-md text-lg',
       },
     },
     defaultVariants: {
-      variant: 'default',
-      size: 'default',
+      variant: 'primary',
+      size: 'md',
     },
   },
 );
