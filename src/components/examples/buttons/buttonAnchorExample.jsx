@@ -1,12 +1,12 @@
-import { ButtonLink } from '@/components/ui/buttonLink';
-import { ButtonLinkIcon } from '@/components/ui/buttonLinkIcon';
+import { ButtonAnchor } from '@/components/ui/buttonAnchor';
+import { ButtonIconAnchor } from '@/components/ui/buttonIconAnchor';
 import { ChevronRight } from 'lucide-react';
 
 export default () => (
   <div class="flex flex-wrap gap-2">
-    <ButtonLink Icon={ChevronRight} href="#" target="_blank">
+    <ButtonAnchor Icon={ChevronRight} href="#" target="_blank">
       Ir al calendario
-    </ButtonLink>
-    <ButtonLinkIcon Icon={ChevronRight} href="#" />
+    </ButtonAnchor>
+    <ButtonIconAnchor Icon={ChevronRight} href="#" />
   </div>
 );

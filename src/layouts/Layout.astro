@@ -1,12 +1,13 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
 }
 
 import '@/styles/globals.css';
 import Menu from '@/layouts/components/Menu.astro';
 
 const { title } = Astro.props;
+const fullTitle = title ? title + ' - MIeL UI' : 'MIeL UI';
 ---
 
 <!doctype html>
@@ -17,15 +18,22 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} - MIeL UI</title>
+    <title>{fullTitle}</title>
   </head>
   <body class="bg-background text-foreground">
-    <div class="fixed inset-0 left-0 z-10 hidden w-[20rem] overflow-y-auto p-8 lg:block">
+    <header
+      class="fixed z-20 h-16 w-full border-b border-secondary bg-background/70 backdrop-blur-sm"
+    >
+      hola
+    </header>
+    <nav
+      class="fixed inset-0 left-0 z-10 mt-16 hidden w-[20rem] overflow-y-auto border-r border-secondary p-8 lg:block"
+    >
       <Menu />
-    </div>
-    <div class="container py-8 lg:pl-[20rem]">
+    </nav>
+    <main class="container pb-8 pt-24 lg:pl-[22rem]">
       <slot />
-    </div>
+    </main>
   </body>
 </html>
 <style is:global>

@@ -1,12 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import Article from '@/layouts/components/Article.astro';
 import Section from '@/layouts/components/Section.astro';
-import Content from '@/layouts/components/Content.astro';
 import Color from '@/components/examples/colors/colorExample';
 ---
 
 <Layout title="Colors">
-  <Content title="Colors">
+  <Article title="Colors">
     <Fragment slot="description">Descripción general del componente</Fragment>
     <Section title="Primary color">
       <Fragment slot="description">
@@ -65,5 +65,5 @@ import Color from '@/components/examples/colors/colorExample';
         <Color hex="#Ef7D12" number="950" className="bg-destructive-950 text-white" />
       </div>
     </Section>
-  </Content>
+  </Article>
 </Layout>

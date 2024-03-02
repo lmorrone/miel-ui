@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import Article from '@/layouts/components/Article.astro';
 import Section from '@/layouts/components/Section.astro';
-import Content from '@/layouts/components/Content.astro';
 import {
   ButtonVariantExamples,
   ButtonLoadingExamples,
@@ -12,56 +12,8 @@ import {
 import { PenLine, Paperclip, ExternalLink, PlusCircle, Trash2, SendHorizonal } from 'lucide-react';
 ---
 
-<Layout title="Buttons">
-  <Content title="Buttons">
+<Layout>
+  <Article title="Introducción">
     <Fragment slot="description">Descripción general del componente</Fragment>
-    <Section title="Primary button">
-      <Fragment slot="description">
-        Usar primary para las acciones principales de una página
-      </Fragment>
-      <ButtonVariantExamples text="Enviar" icon={SendHorizonal} />
-    </Section>
-    <Section title="Secondary button">
-      <Fragment slot="description">
-        Usar secondary para las acciones principales de una página
-      </Fragment>
-      <ButtonVariantExamples variant="secondary" text="Adjuntar" icon={Paperclip} />
-    </Section>
-    <Section title="Dashed button">
-      <Fragment slot="description">
-        Usar secondary para las acciones principales de una página
-      </Fragment>
-      <ButtonVariantExamples variant="dashed" text="Agregar" icon={PlusCircle} />
-    </Section>
-    <Section title="Destructive button">
-      <Fragment slot="description">
-        Usar secondary para las acciones principales de una página
-      </Fragment>
-      <ButtonVariantExamples variant="destructive" text="Eliminar" icon={Trash2} />
-    </Section>
-    <Section title="Ghost button">
-      <Fragment slot="description">
-        Usar secondary para las acciones principales de una página
-      </Fragment>
-      <ButtonVariantExamples variant="ghost" text="Editar" icon={PenLine} />
-    </Section>
-    <Section title="Link button">
-      <Fragment slot="description">
-        Usar secondary para las acciones principales de una página
-      </Fragment>
-      <ButtonVariantExamples variant="link" text="Abrir" icon={ExternalLink} />
-    </Section>
-    <Section title="Loading">
-      <ButtonLoadingExamples />
-    </Section>
-    <Section title="Sizing">
-      <ButtonSizingExamples />
-    </Section>
-    <Section title="Block and mobile">
-      <ButtonBlockExamples />
-    </Section>
-    <Section title="Anchor button">
-      <ButtonAnchorExamples />
-    </Section>
-  </Content>
+  </Article>
 </Layout>

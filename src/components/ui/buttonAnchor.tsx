@@ -1,12 +1,12 @@
 import { Button, type ButtonProps } from '@/components/ui/button';
 import type { HTMLAttributeAnchorTarget } from 'react';
 
-export interface ButtonLinkProps extends ButtonProps {
+export interface ButtonAnchorProps extends ButtonProps {
   href: string;
   target?: HTMLAttributeAnchorTarget;
 }
 
-export function ButtonLink({ href, target, ...props }: ButtonLinkProps) {
+export function ButtonAnchor({ href, target, ...props }: ButtonAnchorProps) {
   return (
     <Button asChild {...props}>
       <a href={href} target={target}>
