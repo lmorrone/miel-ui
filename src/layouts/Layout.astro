@@ -5,6 +5,7 @@ interface Props {
 
 import '@/styles/globals.css';
 import Menu from '@/layouts/components/Menu.astro';
+import Header from '@/layouts/components/Header.astro';
 import { ViewTransitions } from 'astro:transitions';
 
 const { title } = Astro.props;
@@ -17,22 +18,26 @@ const fullTitle = title ? title + ' - MIeL UI' : 'MIeL UI';
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="/prism-one-light.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="stylesheet" href="/css/prism-one-light.css" id="prismTheme" />
     <meta name="generator" content={Astro.generator} />
     <title>{fullTitle}</title>
+    <script is:inline>
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+        document.querySelector('#prismTheme').setAttribute('href', '/css/prism-one-dark.css');
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.querySelector('#prismTheme').setAttribute('href', '/css/prism-one-light.css');
+      }
+    </script>
   </head>
   <body class="bg-background text-foreground">
-    <header
-      class="fixed z-20 h-16 w-full border-b border-secondary bg-background/70 backdrop-blur-sm"
-    >
-      hola
-    </header>
-    <nav
-      class="fixed inset-0 left-0 z-10 mt-16 hidden w-[20rem] overflow-y-auto border-r border-secondary p-8 lg:block"
-    >
-      <Menu />
-    </nav>
+    <Header />
+    <Menu />
     <main class="container pb-8 pt-24 lg:pl-[22rem]">
       <slot />
     </main>

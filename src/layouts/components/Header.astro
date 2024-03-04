@@ -1,0 +1,54 @@
+---
+import { ButtonIconAnchor } from '@/components/ui/buttonIconAnchor';
+import { Github, Moon, Sun } from 'lucide-react';
+import { ButtonIcon } from '@/components/ui/buttonIcon';
+---
+
+<header
+  class="fixed z-20 flex h-16 w-full items-center justify-between gap-4 border-b border-secondary bg-background/70 px-8 backdrop-blur-sm"
+>
+  <div class="flex items-center gap-3">
+    <picture>
+      <img
+        src="/img/miel-icon.png"
+        alt="Logo Miel UI"
+        class="h-10 drop-shadow-sm"
+        id="logoMielUI"
+      />
+    </picture>
+    <div class="flex items-end gap-1">
+      <span class="text-3xl font-bold leading-none dark:text-white">MIeL</span><span
+        class="text-3xl font-semibold leading-none text-muted-foreground">UI</span
+      >
+    </div>
+  </div>
+  <div class="flex gap-2">
+    <ButtonIcon variant="secondary" Icon={Sun} id="changeThemeButton" />
+    <ButtonIconAnchor
+      variant="secondary"
+      href="https://github.com/lmorrone/miel-ui"
+      target="_blank"
+      Icon={Github}
+    />
+  </div>
+</header>
+
+<script>
+  const button = document.querySelector('#changeThemeButton');
+  const logoMielUI = document.querySelector('#logoMielUI');
+
+  button?.addEventListener('click', () => {
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.remove('dark');
+      document.querySelector('#prismTheme')?.setAttribute('href', '/css/prism-one-light.css');
+      localStorage.theme = 'light';
+    } else {
+      document.documentElement.classList.add('dark');
+      document.querySelector('#prismTheme')?.setAttribute('href', '/css/prism-one-dark.css');
+      localStorage.theme = 'dark';
+    }
+  });
+</script>

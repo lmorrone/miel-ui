@@ -45,7 +45,7 @@ export interface ButtonIconProps
 const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
   ({ className, variant, size, asChild = false, loading, disabled, Icon, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';
-    const iconSize = size == 'lg' ? 'size-5' : 'size-4';
+    const iconSize = size == 'lg' ? 'size-6' : size == 'sm' ? 'size-4' : 'size-5';
 
     return (
       <Comp
