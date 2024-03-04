@@ -31,7 +31,7 @@ const slug = slugify(title);
       )
     }
   </header>
-  <div class="overflow-hidden rounded-lg border border-secondary shadow-sm">
+  <div class="overflow-hidden rounded-lg border shadow-sm">
     <div class="relative bg-background p-6">
       <div class="absolute bottom-2 right-2">
         {code && <ButtonIcon variant="ghost" Icon={Code2} size="sm" className="code-button" />}
@@ -42,7 +42,7 @@ const slug = slugify(title);
     </div>
     {
       code && (
-        <div class="code-container hidden overflow-hidden border-t border-secondary">
+        <div class="code-container hidden overflow-hidden border-t">
           <Prism lang="jsx" code={code} class="!my-0 !rounded-none !border-none !p-6" />
         </div>
       )

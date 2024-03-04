@@ -15,9 +15,9 @@ const buttonVariants = cva(
         destructive:
           'bg-destructive text-destructive-foreground shadow hover:bg-destructive-700 focus:ring-destructive/30',
         secondary:
-          'border border-secondary shadow-sm hover:bg-secondary-100 focus:ring-secondary/70 dark:hover:bg-secondary-900',
+          'border shadow-sm hover:bg-secondary-100 focus:ring-secondary/70 dark:hover:bg-secondary-900',
         dashed:
-          'border border-secondary border-dashed shadow-sm hover:bg-primary-50 hover:border-primary focus:ring-primary/30 dark:hover:bg-primary-950',
+          'border border-dashed shadow-sm hover:bg-primary-50 hover:border-primary focus:ring-primary/30 dark:hover:bg-primary-950',
         ghost: 'hover:bg-secondary-100 focus:ring-secondary/70 dark:hover:bg-secondary-900',
         link: 'text-primary underline-offset-4 hover:underline focus:ring-primary/30 focus:ring-0',
       },

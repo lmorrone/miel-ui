@@ -15,7 +15,6 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -43,6 +42,9 @@ module.exports = {
           ...colors.red,
           DEFAULT: colors.red[600],
           foreground: colors.white,
+        },
+        borderColor: {
+          DEFAULT: 'hsl(var(--border))',
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
