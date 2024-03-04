@@ -2,65 +2,85 @@
 import Layout from '@/layouts/Layout.astro';
 import Article from '@/layouts/components/Article.astro';
 import Section from '@/layouts/components/Section.astro';
-import {
-  ButtonVariantExamples,
-  ButtonLoadingExamples,
-  ButtonSizingExamples,
-  ButtonBlockExamples,
-  ButtonAnchorExamples,
-} from '@/components/examples/buttons';
 import { PenLine, Paperclip, ExternalLink, PlusCircle, Trash2, SendHorizonal } from 'lucide-react';
+
+import ButtonVariantExamples, {
+  getCode as getButtonVariantExamplesCode,
+} from '@/components/examples/buttons/buttonVariantExample';
+import ButtonLoadingExamples, {
+  getCode as getButtonLoadingExamplesCode,
+} from '@/components/examples/buttons/buttonLoadingExample';
+import ButtonSizingExamples, {
+  getCode as getButtonSizingExamplesCode,
+} from '@/components/examples/buttons/buttonSizingExample';
+import ButtonBlockExamples, {
+  getCode as getButtonBlockExamplesCode,
+} from '@/components/examples/buttons/buttonBlockExample';
+import ButtonAnchorExamples, {
+  getCode as getButtonAnchorExamplesCode,
+} from '@/components/examples/buttons/buttonAnchorExample';
+
+const primaryCode = getButtonVariantExamplesCode('primary', 'SendHorizonal', 'Enviar');
+const secondaryCode = getButtonVariantExamplesCode('secondary', 'Paperclip', 'Adjuntar');
+const dashedCode = getButtonVariantExamplesCode('dashed', 'PlusCircle', 'Agregar');
+const destructiveCode = getButtonVariantExamplesCode('destructive', 'Trash2', 'Eliminar');
+const ghostCode = getButtonVariantExamplesCode('ghost', 'PenLine', 'Editar');
+const linkCode = getButtonVariantExamplesCode('link', 'ExternalLink', 'Abrir');
+const loadingCode = getButtonLoadingExamplesCode();
+const sizingCode = getButtonSizingExamplesCode();
+const blockCode = getButtonBlockExamplesCode();
+const anchorCode = getButtonAnchorExamplesCode();
 ---
 
 <Layout title="Buttons">
   <Article title="Buttons">
     <Fragment slot="description">Descripción general del componente</Fragment>
-    <Section title="Primary button">
+    <Section title="Primary button" code={primaryCode}>
       <Fragment slot="description">
         Usar primary para las acciones principales de una página
       </Fragment>
       <ButtonVariantExamples text="Enviar" icon={SendHorizonal} />
     </Section>
-    <Section title="Secondary button">
+    <Section title="Secondary button" code={secondaryCode}>
       <Fragment slot="description">
         Usar secondary para las acciones principales de una página
       </Fragment>
       <ButtonVariantExamples variant="secondary" text="Adjuntar" icon={Paperclip} />
     </Section>
-    <Section title="Dashed button">
+    <Section title="Dashed button" code={dashedCode}>
       <Fragment slot="description">
         Usar secondary para las acciones principales de una página
       </Fragment>
       <ButtonVariantExamples variant="dashed" text="Agregar" icon={PlusCircle} />
     </Section>
-    <Section title="Destructive button">
+    <Section title="Destructive button" code={destructiveCode}>
       <Fragment slot="description">
         Usar secondary para las acciones principales de una página
       </Fragment>
       <ButtonVariantExamples variant="destructive" text="Eliminar" icon={Trash2} />
     </Section>
-    <Section title="Ghost button">
+    <Section title="Ghost button" code={ghostCode}>
       <Fragment slot="description">
         Usar secondary para las acciones principales de una página
       </Fragment>
       <ButtonVariantExamples variant="ghost" text="Editar" icon={PenLine} />
     </Section>
-    <Section title="Link button">
+    <Section title="Link button" code={linkCode}>
       <Fragment slot="description">
         Usar secondary para las acciones principales de una página
       </Fragment>
       <ButtonVariantExamples variant="link" text="Abrir" icon={ExternalLink} />
     </Section>
-    <Section title="Loading">
+    <Section title="Loading" code={loadingCode}>
       <ButtonLoadingExamples />
     </Section>
-    <Section title="Sizing">
+    <Section title="Sizing" code={sizingCode}>
       <ButtonSizingExamples />
     </Section>
-    <Section title="Block and mobile">
+    <Section title="Block and mobile" code={blockCode}>
       <ButtonBlockExamples />
     </Section>
-    <Section title="Anchor button">
+    <Section title="Anchor button" code={anchorCode}>
       <ButtonAnchorExamples />
     </Section>
   </Article>
