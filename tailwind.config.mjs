@@ -1,4 +1,5 @@
 import colors from 'tailwindcss/colors';
+import animations from '@midudev/tailwind-animations';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -43,9 +44,6 @@ module.exports = {
           DEFAULT: colors.red[600],
           foreground: colors.white,
         },
-        borderColor: {
-          DEFAULT: 'hsl(var(--border))',
-        },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
@@ -63,6 +61,9 @@ module.exports = {
           foreground: 'hsl(var(--card-foreground))',
         },
       },
+      borderColor: {
+        DEFAULT: 'hsl(var(--border))',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
@@ -79,5 +80,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [animations],
 };

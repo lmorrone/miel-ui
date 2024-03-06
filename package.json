@@ -14,6 +14,7 @@
     "@astrojs/prism": "^3.0.0",
     "@astrojs/react": "^3.0.10",
     "@astrojs/tailwind": "^5.1.0",
+    "@midudev/tailwind-animations": "^0.0.7",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",
