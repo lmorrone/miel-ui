@@ -33,8 +33,8 @@ const slug = slugify(title);
   </header>
   <div class="overflow-hidden rounded-lg border shadow-sm">
     <div class="relative bg-background p-6">
-      <div class="absolute bottom-2 right-2">
-        {code && <ButtonIcon variant="ghost" Icon={Code2} size="sm" className="code-button" />}
+      <div class="absolute bottom-2 right-2 z-10">
+        {code && <ButtonIcon variant="secondary" Icon={Code2} size="sm" className="code-button" />}
       </div>
       <div class="">
         <slot />

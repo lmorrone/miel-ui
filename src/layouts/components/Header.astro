@@ -9,12 +9,7 @@ import { ButtonIcon } from '@/components/ui/buttonIcon';
 >
   <div class="flex items-center gap-3">
     <picture>
-      <img
-        src="/img/miel-icon.png"
-        alt="Logo Miel UI"
-        class="h-10 drop-shadow-sm"
-        id="logoMielUI"
-      />
+      <img src="/img/miel-icon.png" alt="Logo Miel UI" class="h-10 drop-shadow-sm" />
     </picture>
     <div class="flex items-end gap-1">
       <span class="text-3xl font-bold leading-none dark:text-white">MIeL</span><span
@@ -23,7 +18,16 @@ import { ButtonIcon } from '@/components/ui/buttonIcon';
     </div>
   </div>
   <div class="flex gap-2">
-    <ButtonIcon variant="secondary" Icon={Sun} id="changeThemeButton" />
+    <ButtonIcon
+      variant="secondary"
+      Icon={Sun}
+      className="lightThemeButton absolute -z-10 opacity-0 dark:z-10 dark:opacity-100"
+    />
+    <ButtonIcon
+      variant="secondary"
+      Icon={Moon}
+      className="darkThemeButton opacity-100 dark:opacity-0"
+    />
     <ButtonIconAnchor
       variant="secondary"
       href="https://github.com/lmorrone/miel-ui"
@@ -34,21 +38,18 @@ import { ButtonIcon } from '@/components/ui/buttonIcon';
 </header>
 
 <script>
-  const button = document.querySelector('#changeThemeButton');
-  const logoMielUI = document.querySelector('#logoMielUI');
+  const lightThemeButton = document.querySelector('.lightThemeButton');
+  const darkThemeButton = document.querySelector('.darkThemeButton');
 
-  button?.addEventListener('click', () => {
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      document.documentElement.classList.remove('dark');
-      document.querySelector('#prismTheme')?.setAttribute('href', '/css/prism-one-light.css');
-      localStorage.theme = 'light';
-    } else {
-      document.documentElement.classList.add('dark');
-      document.querySelector('#prismTheme')?.setAttribute('href', '/css/prism-one-dark.css');
-      localStorage.theme = 'dark';
-    }
+  lightThemeButton?.addEventListener('click', () => {
+    document.documentElement.classList.remove('dark');
+    document.querySelector('#prismTheme')?.setAttribute('href', '/css/prism-one-light.css');
+    localStorage.theme = 'light';
+  });
+
+  darkThemeButton?.addEventListener('click', () => {
+    document.documentElement.classList.add('dark');
+    document.querySelector('#prismTheme')?.setAttribute('href', '/css/prism-one-dark.css');
+    localStorage.theme = 'dark';
   });
 </script>

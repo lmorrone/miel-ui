@@ -43,9 +43,9 @@ export interface AlertProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof alertVariants> {
   closable?: boolean;
-  onClose?: () => void;
-  withIcon?: boolean;
+  onClose?: (event: React.MouseEvent<HTMLElement>) => void;
   visible?: boolean;
+  noIcon?: boolean;
   Icon?: LucideIcon;
 }
 
@@ -56,10 +56,10 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       variant,
       children,
       closable = false,
-      withIcon = true,
-      visible = true,
-      Icon,
       onClose,
+      visible = true,
+      noIcon = false,
+      Icon,
       ...props
     },
     ref,
@@ -70,10 +70,10 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const handleClose = (event: React.MouseEvent<HTMLElement>) => {
       setClosed(true);
       setTimeout(() => setHidden(true), 350);
-      if (onClose) onClose();
+      if (onClose) onClose(event);
     };
 
-    const AlertIcon = withIcon ? Icon ?? getAlertIcon(variant ?? 'default') : null;
+    const AlertIcon = !noIcon ? Icon ?? getAlertIcon(variant ?? 'default') : null;
 
     return (
       <div

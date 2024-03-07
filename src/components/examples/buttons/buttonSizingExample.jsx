@@ -3,7 +3,7 @@ import { ButtonIcon } from '@/components/ui/buttonIcon';
 import { SendHorizonal } from 'lucide-react';
 
 export default () => (
-  <div class="flex flex-wrap gap-2">
+  <div className="flex flex-wrap gap-2">
     <Button size="sm">Enviar</Button>
     <ButtonIcon size="sm" Icon={SendHorizonal} />
     <Button>Enviar</Button>
@@ -13,7 +13,7 @@ export default () => (
   </div>
 );
 
-export const getCode = (variant = 'primary', icon, text) => {
+export const getCode = () => {
   return `import { Button } from '@/components/ui/button';
 import { ButtonIcon } from '@/components/ui/buttonIcon';
 import { SendHorizonal } from 'lucide-react';

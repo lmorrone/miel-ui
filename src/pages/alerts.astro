@@ -2,40 +2,36 @@
 import Layout from '@/layouts/Layout.astro';
 import Article from '@/layouts/components/Article.astro';
 import Section from '@/layouts/components/Section.astro';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+
+import AlertVariantExamples, {
+  getCode as getAlertVariantExamplesCode,
+} from '@/components/examples/alerts/alertVariantExample';
+import AlertClosableExamples, {
+  getCode as getAlertClosableExamplesCode,
+} from '@/components/examples/alerts/alertClosableExample';
+import AlertIconsExamples, {
+  getCode as getAlertIconsExamplesCode,
+} from '@/components/examples/alerts/alertIconsExample';
+
+const variantCode = getAlertVariantExamplesCode();
+const closableCode = getAlertClosableExamplesCode();
+const iconCode = getAlertIconsExamplesCode();
 ---
 
 <Layout title="Alerts">
   <Article title="Alerts">
     <Fragment slot="description">Descripción general del componente</Fragment>
-    <Section title="Variants">
+    <Section title="Variants" code={variantCode}>
       <Fragment slot="description">Variantes del alert</Fragment>
-      <div class="flex flex-col gap-4">
-        <Alert closable client:load>
-          <AlertTitle>Mensaje enviado</AlertTitle>
-          <AlertDescription>Nos contactaremos con usted a la brevedad.</AlertDescription>
-        </Alert>
-        <Alert variant="success" closable client:load>
-          <AlertTitle>Mensaje enviado</AlertTitle>
-          <AlertDescription>Nos contactaremos con usted a la brevedad.</AlertDescription>
-        </Alert>
-        <Alert variant="info" closable client:load>
-          <AlertTitle>Mensaje enviado</AlertTitle>
-          <AlertDescription>Nos contactaremos con usted a la brevedad.</AlertDescription>
-        </Alert>
-        <Alert variant="warning" closable client:load>
-          <AlertTitle>Mensaje enviado</AlertTitle>
-          <AlertDescription>Nos contactaremos con usted a la brevedad.</AlertDescription>
-        </Alert>
-        <Alert variant="error" closable client:load>
-          <AlertTitle>Mensaje enviado</AlertTitle>
-          <AlertDescription>Nos contactaremos con usted a la brevedad.</AlertDescription>
-        </Alert>
-        <Alert variant="error" client:load withIcon={false}>
-          <AlertTitle>Mensaje enviado</AlertTitle>
-          <AlertDescription>Nos contactaremos con usted a la brevedad.</AlertDescription>
-        </Alert>
-      </div>
+      <AlertVariantExamples client:load />
+    </Section>
+    <Section title="Closable y onClose" code={closableCode}>
+      <Fragment slot="description">Variantes del alert</Fragment>
+      <AlertClosableExamples client:load />
+    </Section>
+    <Section title="Íconos" code={closableCode}>
+      <Fragment slot="description">Variantes del alert</Fragment>
+      <AlertIconsExamples client:load />
     </Section>
   </Article>
 </Layout>

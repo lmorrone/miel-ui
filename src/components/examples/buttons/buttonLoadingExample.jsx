@@ -3,7 +3,7 @@ import { ButtonIcon } from '@/components/ui/buttonIcon';
 import { SendHorizonal } from 'lucide-react';
 
 export default () => (
-  <div class="flex flex-wrap gap-2">
+  <div className="flex flex-wrap gap-2">
     <Button loading>Enviando</Button>
     <Button loading iconPosition="right">
       Enviando
