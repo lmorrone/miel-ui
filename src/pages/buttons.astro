@@ -5,31 +5,27 @@ import Section from '@/layouts/components/Section.astro';
 import { PenLine, Paperclip, ExternalLink, PlusCircle, Trash2, SendHorizonal } from 'lucide-react';
 
 import ButtonVariantExamples, {
-  getCode as getButtonVariantExamplesCode,
+  getCode as getVariantCode,
 } from '@/components/examples/buttons/buttonVariantExample';
 import ButtonLoadingExamples, {
-  getCode as getButtonLoadingExamplesCode,
+  code as loadingCode,
 } from '@/components/examples/buttons/buttonLoadingExample';
 import ButtonSizingExamples, {
-  getCode as getButtonSizingExamplesCode,
+  code as sizingCode,
 } from '@/components/examples/buttons/buttonSizingExample';
 import ButtonBlockExamples, {
-  getCode as getButtonBlockExamplesCode,
+  code as blockCode,
 } from '@/components/examples/buttons/buttonBlockExample';
 import ButtonAnchorExamples, {
-  getCode as getButtonAnchorExamplesCode,
+  code as anchorCode,
 } from '@/components/examples/buttons/buttonAnchorExample';
 
-const primaryCode = getButtonVariantExamplesCode('primary', 'SendHorizonal', 'Enviar');
-const secondaryCode = getButtonVariantExamplesCode('secondary', 'Paperclip', 'Adjuntar');
-const dashedCode = getButtonVariantExamplesCode('dashed', 'PlusCircle', 'Agregar');
-const destructiveCode = getButtonVariantExamplesCode('destructive', 'Trash2', 'Eliminar');
-const ghostCode = getButtonVariantExamplesCode('ghost', 'PenLine', 'Editar');
-const linkCode = getButtonVariantExamplesCode('link', 'ExternalLink', 'Abrir');
-const loadingCode = getButtonLoadingExamplesCode();
-const sizingCode = getButtonSizingExamplesCode();
-const blockCode = getButtonBlockExamplesCode();
-const anchorCode = getButtonAnchorExamplesCode();
+const primaryCode = getVariantCode('primary', 'SendHorizonal', 'Enviar');
+const secondaryCode = getVariantCode('secondary', 'Paperclip', 'Adjuntar');
+const dashedCode = getVariantCode('dashed', 'PlusCircle', 'Agregar');
+const destructiveCode = getVariantCode('destructive', 'Trash2', 'Eliminar');
+const ghostCode = getVariantCode('ghost', 'PenLine', 'Editar');
+const linkCode = getVariantCode('link', 'ExternalLink', 'Abrir');
 ---
 
 <Layout title="Buttons">
@@ -39,49 +35,69 @@ const anchorCode = getButtonAnchorExamplesCode();
       <Fragment slot="description">
         Usar primary para las acciones principales de una página
       </Fragment>
-      <ButtonVariantExamples text="Enviar" icon={SendHorizonal} />
+      <Fragment slot="preview">
+        <ButtonVariantExamples text="Enviar" icon={SendHorizonal} />
+      </Fragment>
     </Section>
     <Section title="Secondary button" code={secondaryCode}>
       <Fragment slot="description">
         Usar secondary para las acciones principales de una página
       </Fragment>
-      <ButtonVariantExamples variant="secondary" text="Adjuntar" icon={Paperclip} />
+      <Fragment slot="preview">
+        <ButtonVariantExamples variant="secondary" text="Adjuntar" icon={Paperclip} />
+      </Fragment>
     </Section>
     <Section title="Dashed button" code={dashedCode}>
       <Fragment slot="description">
         Usar secondary para las acciones principales de una página
       </Fragment>
-      <ButtonVariantExamples variant="dashed" text="Agregar" icon={PlusCircle} />
+      <Fragment slot="preview">
+        <ButtonVariantExamples variant="dashed" text="Agregar" icon={PlusCircle} />
+      </Fragment>
     </Section>
     <Section title="Destructive button" code={destructiveCode}>
       <Fragment slot="description">
         Usar secondary para las acciones principales de una página
       </Fragment>
-      <ButtonVariantExamples variant="destructive" text="Eliminar" icon={Trash2} />
+      <Fragment slot="preview">
+        <ButtonVariantExamples variant="destructive" text="Eliminar" icon={Trash2} />
+      </Fragment>
     </Section>
     <Section title="Ghost button" code={ghostCode}>
       <Fragment slot="description">
         Usar secondary para las acciones principales de una página
       </Fragment>
-      <ButtonVariantExamples variant="ghost" text="Editar" icon={PenLine} />
+      <Fragment slot="preview">
+        <ButtonVariantExamples variant="ghost" text="Editar" icon={PenLine} />
+      </Fragment>
     </Section>
     <Section title="Link button" code={linkCode}>
       <Fragment slot="description">
         Usar secondary para las acciones principales de una página
       </Fragment>
-      <ButtonVariantExamples variant="link" text="Abrir" icon={ExternalLink} />
+      <Fragment slot="preview">
+        <ButtonVariantExamples variant="link" text="Abrir" icon={ExternalLink} />
+      </Fragment>
     </Section>
     <Section title="Loading" code={loadingCode}>
-      <ButtonLoadingExamples />
+      <Fragment slot="preview">
+        <ButtonLoadingExamples />
+      </Fragment>
     </Section>
     <Section title="Sizing" code={sizingCode}>
-      <ButtonSizingExamples />
+      <Fragment slot="preview">
+        <ButtonSizingExamples />
+      </Fragment>
     </Section>
     <Section title="Block y mobile" code={blockCode}>
-      <ButtonBlockExamples />
+      <Fragment slot="preview">
+        <ButtonBlockExamples />
+      </Fragment>
     </Section>
     <Section title="Anchor button" code={anchorCode}>
-      <ButtonAnchorExamples />
+      <Fragment slot="preview">
+        <ButtonAnchorExamples />
+      </Fragment>
     </Section>
   </Article>
 </Layout>

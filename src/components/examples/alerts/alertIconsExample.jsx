@@ -18,8 +18,7 @@ export default () => (
   </div>
 );
 
-export const getCode = () => {
-  return `import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+export const code = `import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Rss } from 'lucide-react';
 
 <Alert Icon={Rss}>
@@ -30,4 +29,3 @@ import { Rss } from 'lucide-react';
   <AlertTitle>Nuevas características de la plataforma</AlertTitle>
   <AlertDescription>Ahora los docentes pueden subir contenidos para una comisión en específica.</AlertDescription>
 </Alert>`;
-};

@@ -13,8 +13,7 @@ export default () => (
   </div>
 );
 
-export const getCode = () => {
-  return `import { Button } from '@/components/ui/button';
+export const code = `import { Button } from '@/components/ui/button';
 import { ButtonIcon } from '@/components/ui/buttonIcon';
 import { SendHorizonal } from 'lucide-react';
 
@@ -24,4 +23,3 @@ import { SendHorizonal } from 'lucide-react';
 <ButtonIcon Icon={SendHorizonal} />
 <Button size="lg">Enviar</Button>
 <ButtonIcon size="lg" Icon={SendHorizonal} />`;
-};

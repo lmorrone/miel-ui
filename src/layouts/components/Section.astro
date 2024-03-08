@@ -31,23 +31,27 @@ const slug = slugify(title);
       )
     }
   </header>
-  <div class="overflow-hidden rounded-lg border shadow-sm">
-    <div class="relative bg-background p-6">
-      <div class="absolute bottom-2 right-2 z-10">
-        {code && <ButtonIcon variant="secondary" Icon={Code2} size="sm" className="code-button" />}
-      </div>
-      <div class="">
-        <slot />
-      </div>
-    </div>
-    {
-      code && (
-        <div class="code-container hidden overflow-hidden border-t">
-          <Prism lang="jsx" code={code} class="!my-0 !rounded-none !border-none !p-6" />
+  {
+    Astro.slots.has('preview') && (
+      <div class="overflow-hidden rounded-lg border shadow-sm">
+        <div class="relative bg-background p-6">
+          <div class="absolute bottom-2 right-2 z-10">
+            {code && (
+              <ButtonIcon variant="secondary" Icon={Code2} size="sm" className="code-button" />
+            )}
+          </div>
+          <div class="">
+            <slot name="preview" />
+          </div>
         </div>
-      )
-    }
-  </div>
+        {code && (
+          <div class="code-container hidden overflow-hidden border-t">
+            <Prism lang="jsx" code={code} class="!my-0 !rounded-none !border-none !p-6" />
+          </div>
+        )}
+      </div>
+    )
+  }
 </section>
 
 <script>

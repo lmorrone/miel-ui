@@ -4,34 +4,103 @@ import Article from '@/layouts/components/Article.astro';
 import Section from '@/layouts/components/Section.astro';
 
 import AlertVariantExamples, {
-  getCode as getAlertVariantExamplesCode,
+  code as variantCode,
 } from '@/components/examples/alerts/alertVariantExample';
+import AlertComponentsExamples, {
+  code as componentsCode,
+} from '@/components/examples/alerts/alertComponentsExample';
 import AlertClosableExamples, {
-  getCode as getAlertClosableExamplesCode,
+  code as closableCode,
 } from '@/components/examples/alerts/alertClosableExample';
 import AlertIconsExamples, {
-  getCode as getAlertIconsExamplesCode,
+  code as iconCode,
 } from '@/components/examples/alerts/alertIconsExample';
-
-const variantCode = getAlertVariantExamplesCode();
-const closableCode = getAlertClosableExamplesCode();
-const iconCode = getAlertIconsExamplesCode();
 ---
 
 <Layout title="Alerts">
   <Article title="Alerts">
-    <Fragment slot="description">Descripción general del componente</Fragment>
+    <Fragment slot="description">
+      El componente <code>&lt;Alert&gt;</code> se utiliza para mostrar un mensaje que llame la atención
+      del usuario. Suele ubicarse debajo del encabezado o menú de navegación, pero por encima de cualquier
+      contenido.
+    </Fragment>
+    <Section title="Título y descripción" code={componentsCode}>
+      <Fragment slot="description">
+        Utilice los componentes <code>&lt;AlertTitle&gt;</code> y
+        <code>&lt;AlertDescription&gt;</code>
+        dentro de <code>&lt;Alert&gt;</code> si desea diferenciar título y detalle del mensaje. Sino,
+        puede usar sólo la descripción o no incluir ninguno de ellos.
+      </Fragment>
+      <Fragment slot="preview">
+        <AlertComponentsExamples client:load />
+      </Fragment>
+    </Section>
     <Section title="Variants" code={variantCode}>
-      <Fragment slot="description">Variantes del alert</Fragment>
-      <AlertVariantExamples client:load />
+      <Fragment slot="description">
+        Cada variante del componente se utiliza con un propósito diferente, ya que sus colores e
+        íconos tienen significado para el usuario:
+        <ul class="ml-2 list-inside list-[circle] [&_li]:my-1">
+          <li>
+            <code>default</code> (o sin variante) para mostrar un mensaje informativo de menor importancia,
+            que no es resultado de una acción realizada por el usuario.
+          </li>
+          <li>
+            <code>success</code> para mostrar un mensaje de confirmación de que la acción realizada por
+            el usuario resultó exitosa.
+          </li>
+          <li>
+            <code>info</code> para mostrar información importante al usuario, que puede ser resultado
+            de una acción pero que no es un error.
+          </li>
+          <li>
+            <code>warning</code> para advertir al usuario sobre un potencial riesgo o sobre una acción
+            que no resultó del todo satisfactoria o completa.
+          </li>
+          <li>
+            <code>error</code> para notificar al usuario de un error ocurrido al realizar una acción
+            y que la misma no ha sido completada.
+          </li>
+        </ul>
+      </Fragment>
+      <Fragment slot="preview">
+        <AlertVariantExamples client:load />
+      </Fragment>
     </Section>
     <Section title="Closable y onClose" code={closableCode}>
-      <Fragment slot="description">Variantes del alert</Fragment>
-      <AlertClosableExamples client:load />
+      <Fragment slot="description">
+        <p>
+          Un componente de alerta puede estar fijo o puede ser cerrado por el usuario. Por lo
+          general, los mensajes fijos se muestran para alertar al usuario sobre acciones que aún no
+          hizo, y los cerrables sobre resultados de acciones ya realizadas o mensajes que requieran
+          aceptación o confirmación de lectura por parte del usuario.
+        </p>
+        <p>
+          Para que la alerta se pueda cerrar, utilice el atributo <code>closable</code>. Para
+          ejecutar una acción al cerrarlo, utilice el evento <code>onClose</code>. O puede manejar
+          programáticamente la visibilidad de la alerta mediante el atributo <code>visible</code>.
+        </p>
+      </Fragment>
+      <Fragment slot="preview">
+        <AlertClosableExamples client:load />
+      </Fragment>
     </Section>
-    <Section title="Íconos" code={closableCode}>
-      <Fragment slot="description">Variantes del alert</Fragment>
-      <AlertIconsExamples client:load />
+    <Section title="Íconos" code={iconCode}>
+      <Fragment slot="description">
+        Cada variante tiene un ícono representativo por defecto. Puede cambiar el ícono mediante el
+        atributo <code is:raw>Icon={LucideIcon}</code> u ocultarlo con <code>noIcon</code>.
+      </Fragment>
+      <Fragment slot="preview">
+        <AlertIconsExamples client:load />
+      </Fragment>
     </Section>
   </Article>
 </Layout>
+
+<style>
+  p {
+    @apply my-2;
+  }
+  code {
+    @apply rounded-sm bg-secondary-200 px-1 py-0.5 text-sm text-secondary-700 dark:bg-secondary-800 dark:text-secondary-300;
+  }
+</style>

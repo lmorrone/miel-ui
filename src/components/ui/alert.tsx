@@ -67,6 +67,13 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const [closed, setClosed] = React.useState(false);
     const [hidden, setHidden] = React.useState(!visible);
 
+    React.useEffect(() => {
+      if (!visible) {
+        setClosed(true);
+        setTimeout(() => setHidden(true), 350);
+      }
+    }, [visible]);
+
     const handleClose = (event: React.MouseEvent<HTMLElement>) => {
       setClosed(true);
       setTimeout(() => setHidden(true), 350);
@@ -89,7 +96,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       >
         <div className="flex items-start gap-3">
           {AlertIcon && <AlertIcon className="size-4" strokeWidth={2.5} />}
-          <div className="flex-1">{children}</div>
+          <div className="flex-1 leading-none">{children}</div>
           {closable && (
             <button onClick={handleClose}>
               <X className="size-5 opacity-60 transition-all hover:opacity-100" />

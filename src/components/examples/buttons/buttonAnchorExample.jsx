@@ -11,11 +11,9 @@ export default () => (
   </div>
 );
 
-export const getCode = () => {
-  return `import { ButtonAnchor } from '@/components/ui/buttonAnchor';
+export const code = `import { ButtonAnchor } from '@/components/ui/buttonAnchor';
 import { ButtonIconAnchor } from '@/components/ui/buttonIconAnchor';
 import { ChevronRight } from 'lucide-react';
 
 <ButtonAnchor Icon={ChevronRight} href="#" target="_blank">Ir al calendario</ButtonAnchor>
 <ButtonIconAnchor Icon={ChevronRight} href="#" />`;
-};

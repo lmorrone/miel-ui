@@ -1,57 +1,70 @@
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Alert } from '@/components/ui/alert';
+import { useState } from 'react';
 
 const handleClose = (e) => {
   console.log('Alerta cerrada!');
   console.log(e.clientX, e.clientY);
 };
 
-export default () => (
-  <div className="flex flex-col gap-4">
-    <Alert closable onClose={handleClose}>
-      <AlertDescription>
+export default () => {
+  const [infoVisible, setInfoVisible] = useState(true);
+  const [warningVisible, setWarningVisible] = useState(true);
+
+  return (
+    <div className="flex flex-col gap-4">
+      <Alert closable onClose={handleClose}>
         Ahora los docentes pueden subir contenidos para una comisión en específica.
-      </AlertDescription>
-    </Alert>
-    <Alert closable onClose={handleClose} variant="success">
-      <AlertDescription>Sus datos y foto de perfil se guardaron correctamente.</AlertDescription>
-    </Alert>
-    <Alert closable onClose={handleClose} variant="info">
-      <AlertDescription>
+      </Alert>
+      <Alert closable onClose={handleClose} variant="success">
+        Sus datos y foto de perfil se guardaron correctamente.
+      </Alert>
+      <Alert visible={infoVisible} variant="info">
         Ha sido inhabilitado de Computación Transversal Nivel 1 (1200).
-      </AlertDescription>
-    </Alert>
-    <Alert closable onClose={handleClose} variant="warning">
-      <AlertDescription>
+        <button className="ml-2 underline" onClick={() => setInfoVisible(false)}>
+          Darme por notificado
+        </button>
+      </Alert>
+      <Alert visible={warningVisible} variant="warning">
         Le recomendamos cambiar su contraseña y cargar su email en su perfil.
-      </AlertDescription>
-    </Alert>
-    <Alert closable onClose={handleClose} variant="error">
-      <AlertDescription>El DNI ingresado no corresponde a ningún usuario de MIeL.</AlertDescription>
-    </Alert>
-  </div>
-);
+        <button className="ml-2 underline" onClick={() => setWarningVisible(false)}>
+          Lo haré más tarde
+        </button>
+      </Alert>
+    </div>
+  );
+};
 
-export const getCode = () => {
-  return `import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+export const code = `import { Alert } from '@/components/ui/alert';
 
 const handleClose = (e) => {
   console.log('Alerta cerrada!');
   console.log(e.clientX, e.clientY);
 };
 
-<Alert closable onClose={handleClose}>
-  <AlertDescription>Ahora los docentes pueden subir contenidos para una comisión en específica.</AlertDescription>
-</Alert>
-<Alert closable onClose={handleClose} variant="success">
-  <AlertDescription>Sus datos y foto de perfil se guardaron correctamente.</AlertDescription>
-</Alert>
-<Alert closable onClose={handleClose} variant="info">
-  <AlertDescription>Ha sido inhabilitado de Computación Transversal Nivel 1 (1200).</AlertDescription>
-</Alert>
-<Alert closable onClose={handleClose} variant="warning">
-  <AlertDescription>Le recomendamos cambiar su contraseña y cargar su email en su perfil.</AlertDescription>
-</Alert>
-<Alert closable onClose={handleClose} variant="error">
-  <AlertDescription>El DNI ingresado no corresponde a ningún usuario de MIeL.</AlertDescription>
-</Alert>`;
-};
+export default () => {
+  const [infoVisible, setInfoVisible] = useState(true);
+  const [warningVisible, setWarningVisible] = useState(true);
+
+  return (
+    <>
+      <Alert closable onClose={handleClose}>
+        Ahora los docentes pueden subir contenidos para una comisión en específica.
+      </Alert>
+      <Alert closable onClose={handleClose} variant="success">
+        Sus datos y foto de perfil se guardaron correctamente.
+      </Alert>
+      <Alert visible={infoVisible} variant="info">
+        Ha sido inhabilitado de Computación Transversal Nivel 1 (1200).
+        <button className="ml-2 underline" onClick={() => setInfoVisible(false)}>
+          Darme por notificado
+        </button>
+      </Alert>
+      <Alert visible={warningVisible} variant="warning">
+        Le recomendamos cambiar su contraseña y cargar su email en su perfil.
+        <button className="ml-2 underline" onClick={() => setWarningVisible(false)}>
+          Lo haré más tarde
+        </button>
+      </Alert>
+    </>
+  );
+};`;

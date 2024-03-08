@@ -29,8 +29,7 @@ export default () => (
   </div>
 );
 
-export const getCode = () => {
-  return `import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+export const code = `import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 <Alert>
   <AlertTitle>Nuevas características de la plataforma</AlertTitle>
@@ -52,4 +51,3 @@ export const getCode = () => {
   <AlertTitle>Datos incorrectos</AlertTitle>
   <AlertDescription>El DNI ingresado no corresponde a ningún usuario de MIeL.</AlertDescription>
 </Alert>`;
-};
