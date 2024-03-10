@@ -30,10 +30,23 @@ const linkCode = getVariantCode('link', 'ExternalLink', 'Abrir');
 
 <Layout title="Buttons">
   <Article title="Buttons">
-    <Fragment slot="description">Descripción general del componente</Fragment>
+    <Fragment slot="description">
+      <p>
+        Los botones se utilizan para ejecutar acciones con un click, como enviar un formulario,
+        navegar entre páginas o confirmar una operación. Son de los componentes más utilizados en
+        las interfaces de usuario.
+      </p>
+      <p>
+        Con el componente <code>&lt;Button&gt;</code> podrá crear botones con texto y con
+        <code>&lt;ButtonIcon&gt;</code> botones con ícono solamente. Para agregar el ícono utilice la
+        propiedad <code is:raw>Icon={LucideIcon}</code>.
+      </p>
+    </Fragment>
     <Section title="Primary button" code={primaryCode}>
       <Fragment slot="description">
-        Usar primary para las acciones principales de una página
+        Los botones primarios indican la acción principal dentro de una sección y utilizan el color
+        primario de la marca. No debería haber más de un botón primario dentro de un grupo de
+        botones. Utilice <code>variant="primary"</code> o ninguna variante para crear este tipo de botones.
       </Fragment>
       <Fragment slot="preview">
         <ButtonVariantExamples text="Enviar" icon={SendHorizonal} />
@@ -41,7 +54,9 @@ const linkCode = getVariantCode('link', 'ExternalLink', 'Abrir');
     </Section>
     <Section title="Secondary button" code={secondaryCode}>
       <Fragment slot="description">
-        Usar secondary para las acciones principales de una página
+        Los botones secundarios indican acciones de menor importantes o de uso menos frecuente. Por
+        lo general acompañan a un botón primario. Utilice <code>variant="secondary"</code> para crear
+        este tipo de botones.
       </Fragment>
       <Fragment slot="preview">
         <ButtonVariantExamples variant="secondary" text="Adjuntar" icon={Paperclip} />
@@ -49,7 +64,8 @@ const linkCode = getVariantCode('link', 'ExternalLink', 'Abrir');
     </Section>
     <Section title="Dashed button" code={dashedCode}>
       <Fragment slot="description">
-        Usar secondary para las acciones principales de una página
+        Los botones punteados se utilizan comunmente para la acción de agregar más elementos a una
+        lista. Utilice <code>variant="dashed"</code> para crear este tipo de botones.
       </Fragment>
       <Fragment slot="preview">
         <ButtonVariantExamples variant="dashed" text="Agregar" icon={PlusCircle} />
@@ -57,7 +73,8 @@ const linkCode = getVariantCode('link', 'ExternalLink', 'Abrir');
     </Section>
     <Section title="Destructive button" code={destructiveCode}>
       <Fragment slot="description">
-        Usar secondary para las acciones principales de una página
+        Los botones destructivos indican acciones de riesgo, como eliminar un elemento o autorizar a
+        un usuario. Utilice <code>variant="destructive"</code> para crear este tipo de botones.
       </Fragment>
       <Fragment slot="preview">
         <ButtonVariantExamples variant="destructive" text="Eliminar" icon={Trash2} />
@@ -65,7 +82,9 @@ const linkCode = getVariantCode('link', 'ExternalLink', 'Abrir');
     </Section>
     <Section title="Ghost button" code={ghostCode}>
       <Fragment slot="description">
-        Usar secondary para las acciones principales de una página
+        Los botones fantasma -o de texto, o terciarios- indican acciones de menor importancia que
+        los botones secundarios o de uso muy poco común. Utilice <code>variant="ghost"</code> para crear
+        este tipo de botones.
       </Fragment>
       <Fragment slot="preview">
         <ButtonVariantExamples variant="ghost" text="Editar" icon={PenLine} />
@@ -73,31 +92,64 @@ const linkCode = getVariantCode('link', 'ExternalLink', 'Abrir');
     </Section>
     <Section title="Link button" code={linkCode}>
       <Fragment slot="description">
-        Usar secondary para las acciones principales de una página
+        Los botones de link se utilizan para enlaces a otras páginas o sitios externos. Utilice
+        <code>variant="link"</code> para crear este tipo de botones.
       </Fragment>
       <Fragment slot="preview">
         <ButtonVariantExamples variant="link" text="Abrir" icon={ExternalLink} />
       </Fragment>
     </Section>
     <Section title="Loading" code={loadingCode}>
+      <Fragment slot="description">
+        Cuando la acción que ejecuta un botón demora cierto tiempo en completarse, utilice la
+        propiedad <code>loading</code> en los botones para deshabilitarlos y mostrar un spinner de carga.
+        Se puede combinar con cualquier variante. La ubicación del spinner, al igual que el resto de
+        los ícono, se puede definir en la propiedad <code>iconPosition</code>, que acepta
+        <code>"left"</code> (default) y <code>"right"</code>.
+      </Fragment>
       <Fragment slot="preview">
         <ButtonLoadingExamples />
       </Fragment>
     </Section>
     <Section title="Sizing" code={sizingCode}>
+      <Fragment slot="description">
+        Mediante la propidad <code>size</code> puede definir el tamaño del botón. Los valores aceptados
+        son <code>"sm"</code> (pequeño), <code>"md"</code> (default) y <code>"lg"</code> (grande). Utilice
+        el botón pequeño para acciones dentro de listas o tablas.
+      </Fragment>
       <Fragment slot="preview">
         <ButtonSizingExamples />
       </Fragment>
     </Section>
     <Section title="Block y mobile" code={blockCode}>
+      <Fragment slot="description">
+        La propidad <code>block</code> hace que el botón ocupe todo el ancho del elemento padre en cualquier
+        tamaño de pantalla. La propidad <code>mobile</code>, en cambio, hace que el botón ocupe todo
+        el ancho sólo en pantallas pequeñas (breakpoint menor o igual a "sm").
+      </Fragment>
       <Fragment slot="preview">
         <ButtonBlockExamples />
       </Fragment>
     </Section>
     <Section title="Anchor button" code={anchorCode}>
+      <Fragment slot="description">
+        Los componentes <code>&lt;ButtonAnchor&gt;</code> y <code>&lt;ButtonIconAnchor&gt;</code> son
+        botones que funcionan como anclas <code>&lt;a href=""&gt;</code>. En lugar de ejecutar una
+        acción en el evento onClick, abren un enlace. Aceptan variantes, íconos y el atributo
+        <code>target</code>, pero no las propiedades loading y disabled.
+      </Fragment>
       <Fragment slot="preview">
         <ButtonAnchorExamples />
       </Fragment>
     </Section>
   </Article>
 </Layout>
+
+<style>
+  p {
+    @apply my-2;
+  }
+  code {
+    @apply rounded-sm bg-secondary-200 px-1 py-0.5 text-sm text-secondary-700 dark:bg-secondary-800 dark:text-secondary-300;
+  }
+</style>

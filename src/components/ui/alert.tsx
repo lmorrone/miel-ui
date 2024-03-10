@@ -89,7 +89,9 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         className={cn(
           alertVariants({ variant }),
           className,
-          closed ? 'animate-fade-out animate-duration-normal' : '',
+          closed
+            ? 'animate-out slide-out-to-top-2 fade-out fill-mode-both duration-300 ease-out'
+            : '',
           hidden ? 'hidden' : '',
         )}
         {...props}
