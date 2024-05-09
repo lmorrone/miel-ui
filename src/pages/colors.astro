@@ -5,62 +5,143 @@ import Section from '@/layouts/components/Section.astro';
 import Color from '@/components/examples/colors/colorExample';
 ---
 
-<Layout title="Colors">
-  <Article title="Colors">
-    <Fragment slot="description">Descripción general del componente</Fragment>
+<Layout title="Colores">
+  <Article title="Colores">
+    <Fragment slot="description">
+      La paleta básica de colores de MIeL UI está compuesta por un color primario (de la marca), un
+      color secundario (neutral), y colores funcionales (que denotan información, advertencia,
+      peligro, etc.). Si bien se admite el uso de cualquier color de la paleta de
+      <a
+        href="https://tailwindcss.com/docs/customizing-colors"
+        class="font-semibold text-primary hover:underline"
+        target="_blank">Tailwind</a
+      >, se deben considerar algunas reglas de aplicación.
+    </Fragment>
     <Section title="Primary color">
       <Fragment slot="description">
-        Usar primary para las acciones principales de una página
+        <p>
+          El color primario está dado por la marca del producto, definido en el manual de
+          comunicación de la Universidad Nacional de La Matanza. Es el color que más se distingue en
+          la interfaz. Los escenarios de aplicación incluyen: botones de acción principal, menúes,
+          links, logos, información importante.
+        </p>
+        <p>
+          A continuación se muestra la escala del color primario. Utilice la palabra "primary" para
+          colorear texto, fondo, bordes o sombra. Por ejemplo:
+          <ul>
+            <li>
+              <code>bg-primary</code>: Colorea el fondo del elemento con el color primario, que
+              corresponde al 600.
+            </li>
+            <li>
+              <code is:raw>bg-primary-{number}</code>: Colorea el fondo del elemento con el color
+              primario en el nivel de iluminación indicado.
+            </li>
+            <li>
+              <code>text-primary-foreground</code>: Colorea el texto de un elemento que tenga como
+              fondo el color principal. Este color es el blanco.
+            </li>
+          </ul>
+        </p>
       </Fragment>
       <Fragment slot="preview">
         <div class="grid grid-cols-12 gap-2">
-          <Color hex="#Ef7D12" number="default" className="bg-primary text-white" />
-          <Color hex="#Ef7D12" number="50" className="bg-primary-50  text-black" />
-          <Color hex="#Ef7D12" number="100" className="bg-primary-100 text-black" />
-          <Color hex="#Ef7D12" number="200" className="bg-primary-200 text-black" />
-          <Color hex="#Ef7D12" number="300" className="bg-primary-300 text-black" />
-          <Color hex="#Ef7D12" number="400" className="bg-primary-400 text-black" />
-          <Color hex="#Ef7D12" number="500" className="bg-primary-500 text-white" />
-          <Color hex="#Ef7D12" number="600" className="bg-primary-600 text-white" />
-          <Color hex="#Ef7D12" number="700" className="bg-primary-700 text-white" />
-          <Color hex="#Ef7D12" number="800" className="bg-primary-800 text-white" />
-          <Color hex="#Ef7D12" number="900" className="bg-primary-900 text-white" />
-          <Color hex="#Ef7D12" number="950" className="bg-primary-950 text-white" />
+          <Color hex="#009674" number="default" className="bg-primary text-primary-foreground" />
+          <Color hex="#EBFEF7" number="50" className="bg-primary-50  text-black" />
+          <Color hex="#D0FBE9" number="100" className="bg-primary-100 text-black" />
+          <Color hex="#A4F6D7" number="200" className="bg-primary-200 text-black" />
+          <Color hex="#6AEBC3" number="300" className="bg-primary-300 text-black" />
+          <Color hex="#2FD8A8" number="400" className="bg-primary-400 text-black" />
+          <Color hex="#0ABF92" number="500" className="bg-primary-500 text-white" />
+          <Color hex="#009674" number="600" className="bg-primary-600 text-white" />
+          <Color hex="#007C63" number="700" className="bg-primary-700 text-white" />
+          <Color hex="#03624f" number="800" className="bg-primary-800 text-white" />
+          <Color hex="#045042" number="900" className="bg-primary-900 text-white" />
+          <Color hex="#012D27" number="950" className="bg-primary-950 text-white" />
         </div>
       </Fragment>
     </Section>
     <Section title="Secondary color">
       <Fragment slot="description">
-        Usar primary para las acciones principales de una página
+        <p>
+          El color secundario o neutral es que el cubre la mayor parte de la página e incluyen el
+          blanco y las diferentes tonalidades de grices. Los escenarios de aplicación incluyen:
+          fondo de la página, bordes, líneas divisorias, botones secundarios.
+        </p>
+        <p>
+          A continuación se muestra la escala del color secundario. Utilice la palabra "secondary"
+          para colorear texto, fondo, bordes o sombra. Por ejemplo:
+          <ul>
+            <li>
+              <code>bg-secondary</code>: Colorea el fondo del elemento con el color secundario, que
+              corresponde al 300 en modo claro y al 600 en modo oscuro.
+            </li>
+            <li>
+              <code is:raw>bg-secondary-{number}</code>: Colorea el fondo del elemento con el color
+              secundario en el nivel de iluminación indicado.
+            </li>
+            <li>
+              <code>text-secondary-foreground</code>: Colorea el texto de un elemento que tenga como
+              fondo el color secundario. Este color es un gris oscuro casi negro.
+            </li>
+          </ul>
+        </p>
+      </Fragment>
+      <Fragment slot="preview">
+        <div class="grid grid-cols-12 gap-2">
+          <Color
+            hex="#D1D5DB"
+            number="default"
+            className="bg-secondary text-secondary-foreground"
+          />
+          <Color hex="#F9FAFB" number="50" className="bg-secondary-50 text-black" />
+          <Color hex="#F3F4F6" number="100" className="bg-secondary-100 text-black" />
+          <Color hex="#E5E7EB" number="200" className="bg-secondary-200 text-black" />
+          <Color hex="#D1D5DB" number="300" className="bg-secondary-300 text-black" />
+          <Color hex="#9CA3AF" number="400" className="bg-secondary-400 text-black" />
+          <Color hex="#6B7280" number="500" className="bg-secondary-500 text-white" />
+          <Color hex="#4B5563" number="600" className="bg-secondary-600 text-white" />
+          <Color hex="#374151" number="700" className="bg-secondary-700 text-white" />
+          <Color hex="#1F2937" number="800" className="bg-secondary-800 text-white" />
+          <Color hex="#111827" number="900" className="bg-secondary-900 text-white" />
+          <Color hex="#030712" number="950" className="bg-secondary-950 text-white" />
+        </div>
+      </Fragment>
+    </Section>
+    <Section title="Functional colors">
+      <Fragment slot="description">
+        <p>
+          Los colores funcionales representan un estado de la aplicación. Por lo general se utiliza
+          el color rojo para el error, el amarillo para advertencias, el azul para información y el
+          verde para éxito.
+        </p>
+        <p>
+          El color rojo también se utiliza para indicar acciones que implican un riesgo o borrado de
+          información. En estas ocaciones utilice la palabra "destructive" para colorear texto,
+          fondo, bordes o sombra. Por ejemplo:
+          <ul>
+            <li>
+              <code>bg-destructive</code>: Colorea el fondo del elemento con color rojo, que
+              corresponde al 600.
+            </li>
+            <li>
+              <code is:raw>bg-destructive-{number}</code>: Colorea el fondo del elemento con color
+              rojo en el nivel de iluminación indicado.
+            </li>
+            <li>
+              <code>text-destructive-foreground</code>: Colorea el texto de un elemento que tenga
+              como fondo el color rojo. Este color es el blanco.
+            </li>
+          </ul>
+        </p>
       </Fragment>
       <Fragment slot="preview">
         <div class="grid grid-cols-12 gap-2">
           <Color
             hex="#Ef7D12"
             number="default"
-            className="bg-secondary text-secondary-foreground"
+            className="bg-destructive text-destructive-foreground"
           />
-          <Color hex="#Ef7D12" number="50" className="bg-secondary-50  text-black" />
-          <Color hex="#Ef7D12" number="100" className="bg-secondary-100 text-black" />
-          <Color hex="#Ef7D12" number="200" className="bg-secondary-200 text-black" />
-          <Color hex="#Ef7D12" number="300" className="bg-secondary-300 text-black" />
-          <Color hex="#Ef7D12" number="400" className="bg-secondary-400 text-black" />
-          <Color hex="#Ef7D12" number="500" className="bg-secondary-500 text-white" />
-          <Color hex="#Ef7D12" number="600" className="bg-secondary-600 text-white" />
-          <Color hex="#Ef7D12" number="700" className="bg-secondary-700 text-white" />
-          <Color hex="#Ef7D12" number="800" className="bg-secondary-800 text-white" />
-          <Color hex="#Ef7D12" number="900" className="bg-secondary-900 text-white" />
-          <Color hex="#Ef7D12" number="950" className="bg-secondary-950 text-white" />
-        </div>
-      </Fragment>
-    </Section>
-    <Section title="Destructive color">
-      <Fragment slot="description">
-        Usar primary para las acciones principales de una página
-      </Fragment>
-      <Fragment slot="preview">
-        <div class="grid grid-cols-12 gap-2">
-          <Color hex="#Ef7D12" number="default" className="bg-destructive text-white" />
           <Color hex="#Ef7D12" number="50" className="bg-destructive-50  text-black" />
           <Color hex="#Ef7D12" number="100" className="bg-destructive-100 text-black" />
           <Color hex="#Ef7D12" number="200" className="bg-destructive-200 text-black" />
@@ -75,7 +156,7 @@ import Color from '@/components/examples/colors/colorExample';
         </div>
       </Fragment>
     </Section>
-    <Section title="Border, foregraund, backgroud" />
+    <Section title="Border, foreground, backgroud" />
     <Section title="Modo oscuro" />
   </Article>
 </Layout>
@@ -86,5 +167,8 @@ import Color from '@/components/examples/colors/colorExample';
   }
   code {
     @apply rounded-sm bg-secondary-200 px-1 py-0.5 text-sm text-secondary-700 dark:bg-secondary-800 dark:text-secondary-300;
+  }
+  ul {
+    @apply ml-2 list-inside list-[circle] [&_li]:my-1;
   }
 </style>

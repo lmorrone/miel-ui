@@ -39,7 +39,7 @@ import AlertIconsExamples, {
       <Fragment slot="description">
         Cada variante del componente se utiliza con un propósito diferente, ya que sus colores e
         íconos tienen significado para el usuario:
-        <ul class="ml-2 list-inside list-[circle] [&_li]:my-1">
+        <ul>
           <li>
             <code>default</code> (o sin variante) para mostrar un mensaje informativo de menor importancia,
             que no es resultado de una acción realizada por el usuario.
@@ -102,5 +102,8 @@ import AlertIconsExamples, {
   }
   code {
     @apply rounded-sm bg-secondary-200 px-1 py-0.5 text-sm text-secondary-700 dark:bg-secondary-800 dark:text-secondary-300;
+  }
+  ul {
+    @apply ml-2 list-inside list-[circle] [&_li]:my-1;
   }
 </style>
